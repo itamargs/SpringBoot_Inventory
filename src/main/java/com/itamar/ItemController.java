@@ -9,7 +9,7 @@ import java.util.List;
 
 // This class Configures REST API
 
-@RestController // let spring know that this is a Rest controller
+@RestController // let spring know  that this is a Rest controller
 @RequestMapping("/items")
 public class ItemController {
 

@@ -61,6 +61,7 @@ public class ItemDao {
         System.out.println("Check add item");
         System.out.println(newItem.getName());
         itemRepository.save(newItem);
+        //todo: 'itenNo' is must to be uniqe so need to handle error in case 'itemNo' is already exist
     }
 
     // todo: return error if item dosent exist

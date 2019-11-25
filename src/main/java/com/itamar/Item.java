@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class Item {
     @Id //it is the object's auto-generated primary key
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id; //todo: no need to show id in swagger API catalog
+    @Column(name = "itemNo", nullable = false, unique = true) // indicates to JPA that this is a column + set ItemNo to MUST be uniqe or error will accure
     private int itemNo;
     private String name;
     private int amount;
@@ -29,7 +30,7 @@ public class Item {
         return id;
     }
 
-    @Column(name = "itemNo", nullable = false) // indicates to JPA that this is ac column
+
     public int getItemNo() {
         return itemNo;
     }
