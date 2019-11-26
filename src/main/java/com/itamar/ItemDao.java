@@ -31,8 +31,7 @@ public class ItemDao {
 //    }
 
     public List<Item> getAllItems() {  //return list of all the items in the inventory
-        System.out.println("Check get all");
-        System.out.println(itemRepository.findAll());
+        itemRepository.findAll();
         return itemRepository.findAll();
     }
 
@@ -50,7 +49,6 @@ public class ItemDao {
     }
 
     public void deposit(int itemNo, int amount) { //adds item amount quantity (deposit)
-        System.out.println("int deposit: " + "itemNo: " + itemNo + ". amount: " + amount);
         Item item = getItemByItemNo(itemNo);
         item.setAmount(item.getAmount() + amount); //updates amount
         itemRepository.save(item); //save update to repository
@@ -58,8 +56,6 @@ public class ItemDao {
 
     public void addItem(Item item) { //add new item to DB
         Item newItem = new Item(item.getItemNo(), item.getName(), item.getAmount(), item.getInventory_code());
-        System.out.println("Check add item");
-        System.out.println(newItem.getName());
         itemRepository.save(newItem);
         //todo: 'itenNo' is must to be uniqe so need to handle error in case 'itemNo' is already exist
     }
